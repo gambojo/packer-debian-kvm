@@ -53,7 +53,7 @@ build {
     post-processor "shell-local" {
       execute_command = ["bash", "-c", "{{.Vars}} {{.Script}}"]
       inline = [
-        "sha256sum output/${var.image_name_raw} > output/${var.image_name_raw}.sha256"
+        "sha256sum output/${var.vm_name}.${var.format} > output/${var.vm_name}.${var.format}.sha256"
       ]
     }
   }
