@@ -119,7 +119,7 @@ variable "disk_detect_zeroes" {
 ### GUI variables
 variable "headless" {
   type    = bool
-  default = false
+  default = true
   description = "Using GUI for building VM."
 }
 
