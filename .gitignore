@@ -17,8 +17,11 @@ crash.log
 
 # Output objects
 output/
+build/
 
 # Images
 *.raw
 *.qcow2
-*.iso
+
+# Check sum
+*.sha256

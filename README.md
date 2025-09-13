@@ -1,3 +1,6 @@
 #  packer-debian-kvm
 
-##### required packer >= 1.7.0
+#### required:
+- packer >= 1.7.0
+- ansible >= 7.0
+- ansible-core >= 2.0
