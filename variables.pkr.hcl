@@ -169,7 +169,7 @@ variable "format" {
 variable "tag" {
   type        = string
   description = "Tag name."
-  default     = "12"
+  default     = "13.1.0-amd64"
 }
 
 locals {
