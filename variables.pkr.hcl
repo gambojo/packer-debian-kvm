@@ -161,8 +161,8 @@ variable "format" {
   description = "Specifies the output format of the VM image."
 
   validation {
-    condition     = can(regex("^(qcow2|raw)$", var.format))
-    error_message = "The format variable must be equal one of values: qcow2, raw."
+    condition     = can(regex("^(qcow2|raw|vmdk|vdi|vhdx)$", var.format))
+    error_message = "The format variable must be equal one of values: qcow2, raw, vmdk, vdi, vhdx."
   }
 }
 
@@ -177,9 +177,21 @@ locals {
   shutdown_command = "echo '${var.ssh_password}' | sudo -S /sbin/shutdown -hP now"
 }
 
-### Privision dir variable
+### Provision dir variable
 variable "provisions_dir" {
   type    = string
   default = "provisions"
   description = "The dir with provisions"
+}
+
+### Check sum type variable
+variable "checksum_type" {
+  type    = string
+  default = "sha256"
+  description = "Select checksum type"
+
+  validation {
+    condition     = can(regex("^(sha256|sha512)$", var.checksum_type))
+    error_message = "The format variable must be equal one of values: sha256, sha512."
+  }
 }

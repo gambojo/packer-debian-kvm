@@ -60,7 +60,7 @@ build {
   ### Post-processors
   post-processors {
     post-processor "checksum" {
-      checksum_types      = ["sha256"]
+      checksum_types      = ["${var.checksum_type}"]
       output              = "${var.output_directory}/${local.vm_name}.{{.ChecksumType}}"
       keep_input_artifact = true
     }
